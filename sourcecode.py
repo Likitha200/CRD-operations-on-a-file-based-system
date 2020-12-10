@@ -1,9 +1,15 @@
 import threading 
 from threading import*
 import time
+import json
 
-dic={} #'dic' is the dictionary in which the data is stored as key-value pairs, it is unordered, changable type.
-
+with open('C:/Users/BJ Reddy/Documents/data.txt')as f:
+     dic=json.load(f) #loading jason object
+     f.close()
+with open('C:/Users/BJ Reddy/Documents/data.txt','w')as fi:
+     json.dump(dic,fi) #writes dic object to fi 
+     fi.close()
+    
 #create operation-It has three parameters,key,value,timeout where the timeout is optional.
 
 def create(key,val,timeout=0):
@@ -21,7 +27,7 @@ def create(key,val,timeout=0):
             else:
                 print("error: Memory limit exceeded!")#error message2
         else:
-            print("error: Invalind key_name!")#error message3
+            print("error: Invalid key_name!")#error message3
 
 #read operation-It has one parameter, key_name.
             
