@@ -6,10 +6,7 @@ import json
 with open('C:/Users/BJ Reddy/Documents/data.txt')as f:
      dic=json.load(f) #loading jason object
      f.close()
-with open('C:/Users/BJ Reddy/Documents/data.txt','w')as fi:
-     json.dump(dic,fi) #writes dic object to fi 
-     fi.close()
-    
+   
 #create operation-It has three parameters,key,value,timeout where the timeout is optional.
 
 def create(key,val,timeout=0):
@@ -62,3 +59,7 @@ def delete(key):
         else:
             del dic[key]
             print("key is successfully deleted")
+          
+with open('C:/Users/BJ Reddy/Documents/data.txt','w')as fi:
+     json.dump(dic,fi) #writes dic object to fi 
+     fi.close()
